@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <form action="/ascii" method="POST" enctype="multipart/form-data">
+        <div class="upload">
+            <input type="file" name="infile" accept=".jpg, .jpeg, .png, image/jpeg, image/png" onchange="this.form.submit()"/>
+            <p>Upload Image</p>
+            <span class="subtitle">Click to select a file</span>
+        </div>
+    </form>
+    
+{% endblock %}
