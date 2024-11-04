@@ -11,6 +11,20 @@ def pixel_to_ascii(pixel):
 
     return chars[round(brightness / num)]
 
+def pixel_to_col_ascii(pixel):
+    brightness = (max(pixel) + min(pixel)) / 2
+    chars = '              `^",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$'
+
+    num = 255 / (len(chars) - 1)
+
+    color = f"rgb({pixel[0]}, {pixel[1]}, {pixel[2]})"
+    char = chars[round(brightness / num)]
+
+    if char != " ":
+        return f'<span style="color: {color}">{char}</span>'
+    else:
+        return char
+
 
 def resize(image):
     W = 100
@@ -36,7 +50,7 @@ def convert_to_ascii(image):
             index = i * width + j
             
             # Calculate ascii character
-            ascii_art += pixel_to_ascii(pixels[index])
+            ascii_art += pixel_to_col_ascii(pixels[index])
             
             # Store into string
 
