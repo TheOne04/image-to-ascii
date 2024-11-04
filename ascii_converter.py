@@ -13,7 +13,7 @@ def pixel_to_ascii(pixel):
 
 def pixel_to_col_ascii(pixel):
     brightness = (max(pixel) + min(pixel)) / 2
-    chars = '              `^",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$'
+    chars = '`^",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$'
 
     num = 255 / (len(chars) - 1)
 
